@@ -8,6 +8,7 @@
   },
   "author": "MALUKI MUTHUSI",
   "license": "ISC",
+  "repository": "https://github.com/MalukiMuthusi/bixie",
   "dependencies": {
     "express": "^4.17.1"
   },
