@@ -1,12 +1,12 @@
 {
   "name": "bixie",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Bixie server, serving APIs as per the interview requirements",
+  "main": "app.js",
   "scripts": {
     "test": "nyc mocha"
   },
-  "author": "",
+  "author": "MALUKI MUTHUSI",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
