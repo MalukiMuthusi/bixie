@@ -10,7 +10,10 @@
   "license": "ISC",
   "repository": "https://github.com/MalukiMuthusi/bixie",
   "dependencies": {
-    "express": "^4.17.1"
+    "bluebird": "^3.7.2",
+    "express": "^4.17.1",
+    "node-cron": "^3.0.0",
+    "pg": "^8.6.0"
   },
   "devDependencies": {
     "mocha": "^9.0.2",
