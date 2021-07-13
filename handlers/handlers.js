@@ -51,7 +51,7 @@ async function httpGet(options) {
         let data = ''
         const req = https.request(options, (res) => {
             if (res.statusCode !== 200) {
-                reject(Error(`did not get ok from server, returned ${res.statusCode}`))
+                reject(Error(`did not get ok from server, returned ${res.statusCode} from ${options.hostname}`))
             }
 
             res.on('data', (chunk) => {

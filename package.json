@@ -4,7 +4,8 @@
   "description": "Bixie server, serving APIs as per the interview requirements",
   "main": "app.js",
   "scripts": {
-    "test": "nyc mocha"
+    "test": "nyc mocha",
+    "dev": "nodemon app.js"
   },
   "author": "MALUKI MUTHUSI",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.13.2",
     "node-cron": "^3.0.0",
+    "nodemon": "^2.0.12",
     "pg": "^8.6.0"
   },
   "devDependencies": {

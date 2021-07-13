@@ -20,7 +20,7 @@ app.get('/api/v1/stations/:st_id', getStationDataHandler)
 
 app.get('/api/v1/stations/:stationID', stationHistoryHandler)
 
-cron.schedule('0 0 * * * *', fetchRecords)
+cron.schedule('0 *\2 * * * *', fetchRecords)
 
 app.listen(port, () => {
     console.log(`Bixie server listening at http://localhost:${port}`)

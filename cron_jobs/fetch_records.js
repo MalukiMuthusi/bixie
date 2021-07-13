@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const { httpGet } = require('../handlers/handlers')
 const { Pool } = require('pg')
 const pool = new Pool()
+const { Station } = require('../models/models')
 
 
 function fetchRecords() {
@@ -29,7 +30,8 @@ async function dbConnect() {
     const options = {
         useNewUrlParser: true,
         keepAlive: true,
-        keepAliveInitialDelay: 300000
+        keepAliveInitialDelay: 300000,
+        autoIndex: false
     }
     var connection
     try {
@@ -55,24 +57,17 @@ async function dbConnect() {
         console.log('closed connection to the database')
     })
 
+    return connection
+
 }
 
 async function saveRecords(data) {
     try {
-        const client = await pool.connect()
+        const stations = new Station();
+        stations.features = data;
+        const savedStation = await stations.save()
+        console.log(savedStation)
 
-        try {
-            const queryText = 'INSERT INTO bixie.stations(id, name) VALUES($1, $2) RETURNING *'
-            const values = [data.features[0].properties.id, data.features[0].properties.name]
-
-            const res = await client.query(queryText, values)
-            console.log(res.rows[0])
-
-        } catch (error) {
-            console.log(error.stack)
-        } finally {
-            client.release()
-        }
 
     } catch (error) {
         console.log(error)
